@@ -1,0 +1,39 @@
+<div class="row">
+<app-banner></app-banner>
+</div>
+
+<div class="row center-xs create-profile__title">
+    Create Profile
+</div>
+
+<div class="row create-profile__input">
+    <label>Full name*</label>
+    <input type="text" pInputText [(ngModel)]="fullName" required minlength="2" />
+</div>
+
+<div class="row create-profile__input">
+    <label>City/town*</label>
+    <input type="text" pInputText [(ngModel)]="town" required minlength="1" />
+</div>
+
+<div class="row create-profile__input">
+    <label>Bio*</label>
+    <textarea rows="3" cols="30" pInputTextarea autoResize="autoResize" [(ngModel)]="bio" required
+        minlength="1"></textarea>
+</div>
+
+<div class="row create-profile__input">
+    <label>Password*</label>
+    <p-password [(ngModel)]="password" [toggleMask]="true"></p-password>
+</div>
+
+<div class="row center-xs">
+    <p-fileUpload #fubauto mode="basic" name="demo[]" url="/assets/upload.php" accept="image/*" maxFileSize="1000000"
+        (onUpload)="onBasicUploadAuto($event)" [auto]="true" chooseLabel="Upload a profile picture"
+        chooseIcon="pi pi-upload"></p-fileUpload>
+</div>
+
+<div class="row center-xs">
+    <button class="create-profile__button" (click)="createProfile()"> <a routerLink="/donate-options"
+            routerLinkActive="active">Next</a></button>
+</div>

@@ -1,0 +1,90 @@
+<app-banner></app-banner>
+
+<div class="row">
+    <button #backButton class="back-button" (click)="goBack()">
+        <fa-icon [icon]="faChevronLeft"></fa-icon> Back
+    </button>
+</div>
+
+<div #adOptions class="receive-options">
+    <div class="row center-xs receive-options__title-one">
+        What do you need?
+    </div>
+
+    <div class="row center-xs">
+        <button class="receive-options__button" (click)="selectOption('White good')">White good</button>
+    </div>
+
+    <div class="row center-xs">
+        <button class="receive-options__button" (click)="selectOption('Bedding')">Bedding</button>
+    </div>
+
+    <div class="row center-xs">
+        <button class="receive-options__button" (click)="selectOption('Cleaning Materials')">Cleaning Materials</button>
+    </div>
+
+    <div class="row center-xs">
+        <button class="receive-options__button" (click)="selectOption('Pots and Pans')">Pots and Pans</button>
+    </div>
+</div>
+
+<div #donateInput class="donate-input">
+    <div class="row center-xs receive-options__title-two">
+        Ads
+    </div>
+
+    <!-- //maybe loop through the filtered options to create buttons -->
+    <div class="row options">
+        <button class="filtered-options">{{selectedOption}}</button>
+    </div>
+
+    <div *ngFor="let ad of ads">
+
+        <button class="ads__ad" (click)="selectAd(ad.id)">
+            <div class="row ads__live-ads">
+                <div class="col ads__live-ads--image">
+                    (image)
+                </div>
+                <div class="col ads__live-ads--container">
+                    <div class="ads__live-ads--title">{{ad.title}}</div>
+                    <div class="ads__live-ads--description"> {{ad.description}}</div>
+                    <div class="ads__live-ads--count">
+                        <fa-icon [icon]="faEye"></fa-icon>{{viewCount}} views
+                    </div>
+                </div>
+            </div>
+        </button>
+    </div>
+</div>
+
+<div #viewAd class="selected-ad">
+    <div class="row center-xs preview-the-ad__title">
+        {{selectedOption}}
+    </div>
+
+    <div *ngFor="let ad of selectedAd">
+        <div class="row preview-the-ad__ad-title">
+            Title: {{ad.title}}
+        </div>
+
+        <div class="row preview-the-ad__images">
+            (pics)
+        </div>
+
+        <div class="row preview-the-ad__description">
+            Description: {{ad.description}}
+        </div>
+
+        <div class="row preview-the-ad__ad-title">
+            Quality: {{ad.quality}}
+        </div>
+
+        <div class="row center-xs preview-the-add__buttons">
+            <button class="preview-the-ad__button"> <a class="mailto" href="mailto:home-buddy-user@gmail.com?subject=Home Buddy: Your ad ({{ad.title}}) has a message&body=Hi there, I am interested in this item. Please call me on 07123456790."> <fa-icon [icon]="faEnvelope"></fa-icon>Respond to this ad</a> </button>
+        </div>
+    </div>
+
+    <div *ngIf="selectedAd.length == 0">
+        Unfortunately, there are no ads of this type.
+    </div>
+</div>

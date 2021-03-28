@@ -1,0 +1,48 @@
+.home {
+
+    &__name {
+        color:rgb(82, 177, 183);
+        font-size: 36px;
+        margin-top: 60px;
+    }
+
+    &__logo {
+        margin-top: 42px;
+        margin-bottom: 15px;
+    }
+
+    &__slogan {
+        width: 195px;
+        text-align: center;
+        font-size: 16px;
+        margin-bottom: 70px;
+    }
+
+    &__sign-up {
+        background-color: rgb(82, 177, 183);
+        height: 39px;
+        width: 192px;
+        border-radius: 5px;
+        border-color:  rgb(82, 177, 183);
+        border-style: none;
+        color: white;
+
+        a {
+            color: white;
+            text-decoration: none;
+            letter-spacing: 0;
+            font-size: 16px;
+        }
+    }
+
+    &__log-in {
+
+        a {
+            margin-top: 15px;
+            font-size: 12px;
+            height: 14px;
+            width: 45px;
+            color: black;
+        }
+    }
+}

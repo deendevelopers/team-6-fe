@@ -1,0 +1,29 @@
+<app-banner></app-banner>
+
+<div class="row center-xs preview-ad__title">
+    This is what your ad looks like
+</div>
+
+<div *ngFor="let ad of ads">
+
+    <div class="row preview-ad__quality">
+        Title: {{ad.title}}
+    </div>
+    
+    <div class="row preview-ad__images">
+        (pics)
+    </div>
+
+    <div class="row preview-ad__description">
+        Description: {{ad.description}}
+    </div>
+
+    <div class="row preview-ad__quality">
+        Quality: {{ad.quality}}
+    </div>
+</div>
+
+<div class="row center-xs preview-add__buttons">
+    <!-- <button class="preview-ad__button" (click)="edit()"> <a routerLink="" routerLinkActive="active">Edit</a></button> -->
+    <button class="preview-ad__button" (click)="complete()"> Great!</button>
+</div>

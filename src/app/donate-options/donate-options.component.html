@@ -1,0 +1,75 @@
+<app-banner></app-banner>
+
+<div class="row">
+    <button #backButton class="back-button" (click)="goBack()">
+        <fa-icon [icon]="faChevronLeft"></fa-icon> Back
+    </button>
+</div>
+
+<div #donateOptions class="donate-options">
+    <div class="row center-xs donate-options__title-one">
+        What would you like to donate?
+    </div>
+
+    <div class="row center-xs">
+        <button class="donate-options__button" (click)="donateOption('White good')">White good</button>
+    </div>
+
+    <div class="row center-xs">
+        <button class="donate-options__button" (click)="donateOption('Bedding')">Bedding</button>
+    </div>
+
+    <div class="row center-xs">
+        <button class="donate-options__button" (click)="donateOption('Cleaning Materials')">Cleaning Materials</button>
+    </div>
+
+    <div class="row center-xs">
+        <button class="donate-options__button" (click)="donateOption('Pots and Pans')">Pots and Pans</button>
+    </div>
+</div>
+
+<div #donateInput class="donate-input">
+    <div class="row center-xs donate-options__title-two">
+        {{selectedOption}}
+    </div>
+
+    <div class="row donate-options__input">
+        <label class="donate-options__label-title">Title</label>
+        <input class="input-title" type="text" pInputText [(ngModel)]="title" />
+    </div>
+
+
+    <div class="row donate-options__input">
+        <label class="donate-options__label-title">Description</label>
+        <input class="input-desc" type="text" pInputText [(ngModel)]="description"
+            placeholder="Give us a short description of your item." />
+    </div>
+
+    <div class="row">
+        <label class="donate-options__label-title-two">Quality of your item</label>
+        <div class="row donate-options__check-container">
+            <input type="radio" id="new" name="quality" value="New">
+            <label for="new"> New</label>
+        </div>
+
+        <div class="row donate-options__check-container">
+            <input type="radio" id="moderatelyUsed" name="quality" value="Moderately used">
+            <label for="moderatelyUsed"> Moderately used</label>
+        </div>
+
+        <div class="row donate-options__check-container">
+            <input type="radio" id="used" name="quality" value="Used">
+            <label for="used"> Used</label>
+        </div>
+    </div>
+
+    <div class="row center-xs">
+        <p-fileUpload #fubauto mode="basic" name="demo[]" url="./upload.php" accept="image/*" maxFileSize="1000000"
+            (onUpload)="onBasicUploadAuto($event)" [auto]="true" chooseLabel="Upload a profile picture"
+            chooseIcon="pi pi-upload"></p-fileUpload>
+    </div>
+
+    <div class="row center-xs">
+        <button class="donate-options__button-submit" (click)="createAd()"> Submit</button>
+    </div>
+</div>

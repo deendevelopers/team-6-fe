@@ -1,0 +1,21 @@
+<div class="row center-xs verification__title">
+    Verification
+</div>
+
+<div #infoText class="row center-xs verification__info">
+    We will send you a 4 digit code on this mobile number.
+</div>
+
+<div class="row center-xs verification__input">
+    <div #inputText class="row center-xs verification__input-text">
+        Enter mobile number
+    </div>
+    <div class="row center-xs">
+        <input type="text" pInputText [(ngModel)]="phoneNumber" />
+    </div>
+</div>
+
+<div class="row center-xs">
+    <button #otpButton class="verification__button" (click)="getOTP()">Get OTP</button>
+    <button #completeVerification class="verification__button next-button"><a routerLink="/create-profile" routerLinkActive="active">Next</a></button>
+</div>

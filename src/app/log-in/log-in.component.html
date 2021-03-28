@@ -1,0 +1,29 @@
+<app-banner></app-banner>
+
+<div class="row center-xs log-in__title">
+    Log in
+</div>
+
+
+<div class="row log-in__input">
+    <label>Username*</label>
+    <input type="text" pInputText [(ngModel)]="username" placeholder="Full Name"/>
+</div>
+
+<div class="row log-in__input">
+    <label>Password*</label>
+    <p-password [(ngModel)]="password" [toggleMask]="true" [feedback]="false"></p-password>
+</div>
+
+<div #userDoesNotExist class="does-not-exist">
+    User does not exist. Please <a routerLink="/sign-up" routerLinkActive="active">Sign up </a> or try again. 
+</div>
+
+<div class="row center-xs">
+    <button class="log-in__button" (click)="logIn()"> Log in</button>
+</div>
+
+<div class="row center-xs">
+    <a routerLink="/sign-up" routerLinkActive="active">Or sign up </a>
+  </div>
+
