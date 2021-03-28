@@ -29,10 +29,13 @@
 </div>
 
 <div #donateInput class="donate-input">
-    <div class="row center-xs receive-options__title-two">
-        Ads
-    </div>
 
+    <div class="pink-background-options">
+
+        <div class="row center-xs receive-options__title-two">
+            Ads
+        </div>
+    </div>
     <!-- //maybe loop through the filtered options to create buttons -->
     <div class="row options">
         <button class="filtered-options">{{selectedOption}}</button>
@@ -80,7 +83,10 @@
         </div>
 
         <div class="row center-xs preview-the-add__buttons">
-            <button class="preview-the-ad__button"> <a class="mailto" href="mailto:home-buddy-user@gmail.com?subject=Home Buddy: Your ad ({{ad.title}}) has a message&body=Hi there, I am interested in this item. Please call me on 07123456790."> <fa-icon [icon]="faEnvelope"></fa-icon>Respond to this ad</a> </button>
+            <button class="preview-the-ad__button"> <a class="mailto"
+                    href="mailto:home-buddy-user@gmail.com?subject=Home Buddy: Your ad ({{ad.title}}) has a message&body=Hi there, I am interested in this item. Please call me on 07123456790.">
+                    <fa-icon [icon]="faEnvelope"></fa-icon>Respond to this ad
+                </a> </button>
         </div>
     </div>
 

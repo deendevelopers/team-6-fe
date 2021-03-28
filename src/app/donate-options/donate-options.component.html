@@ -1,4 +1,3 @@
-<app-banner></app-banner>
 
 <div class="row">
     <button #backButton class="back-button" (click)="goBack()">
@@ -29,8 +28,10 @@
 </div>
 
 <div #donateInput class="donate-input">
-    <div class="row center-xs donate-options__title-two">
-        {{selectedOption}}
+    <div class="row donate-options__title-two">
+        <span>
+            {{selectedOption}}
+        </span>
     </div>
 
     <div class="row donate-options__input">

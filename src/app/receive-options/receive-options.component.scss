@@ -96,6 +96,7 @@
 
 .back-button {
     display: none;
+    color: white;
 }
 
 .donate-input {
@@ -165,6 +166,7 @@
 
 .options {
     margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 
@@ -176,7 +178,7 @@
     }
 
     &__images {
-        height: 140px;
+        height: 120px;
         width: 270px;
         border: 1px solid black;
         padding: 10px;
@@ -231,4 +233,15 @@
 
 .selected-ad {
     display: none;
+}
+
+
+.pink-background-options {
+    background-color: #ef626c;
+    height: 87px;
+    color: white;
+    margin-top: -32px;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-top: 50px;
 }

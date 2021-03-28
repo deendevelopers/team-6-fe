@@ -1,11 +1,21 @@
 .banner {
     &__background {
-       // background-color: rgb(82, 177, 183);
+        background-color: rgb(245, 245, 245);
+        margin-top: -9px;
+        height: 61px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
     }
 }
 
 button {
+    margin-top: 10px;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
+}
+
+img {
+    margin-top: -15px;
 }

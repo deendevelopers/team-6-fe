@@ -15,7 +15,7 @@ export class TrackAdsComponent implements OnInit {
 
   faEye = faEye;
 
-  peopleCount = 0;
+  peopleCount = 2;
   viewCount = 1;
   title = 'Title';
   description = 'Description';

@@ -12,7 +12,7 @@
         border-radius: 5px;
         border-color: rgb(82, 177, 183);
         border-style: none;
-        margin-top: 25px;
+        margin-top: 20px;
         color: white;
         margin-right: 15px;
         float: right;
@@ -80,7 +80,7 @@
         }
 
         &--count {
-            margin-top: 20px;
+            margin-top: 10px;
             color: rgb(82, 177, 183);
 
             fa-icon {
@@ -94,6 +94,10 @@
 .individual-ad {
     display: none;
     padding-left: 30px;
+
+    &__title {
+        margin-top: 5px;
+    }
 
     &__question {
         margin-top: 20px;
@@ -134,7 +138,7 @@
         border-radius: 5px;
         border-color: #52b1b7;
         border-style: none;
-        margin-top: 35px;
+        margin-top: 10px;
         color: white;
 
         a {
@@ -152,4 +156,8 @@
 
 ::ng-deep .p-dropdown {
     margin-top: 10px;
+}
+
+.pink {
+    height: 130px !important;
 }

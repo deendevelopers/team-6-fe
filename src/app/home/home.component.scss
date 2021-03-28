@@ -1,13 +1,18 @@
 .home {
 
     &__name {
-        color:rgb(82, 177, 183);
-        font-size: 36px;
         margin-top: 60px;
+
+        span {
+            background-color: rgb(239, 98, 108);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 0px 10px 10px 0px;
+        }
     }
 
     &__logo {
-        margin-top: 42px;
+        margin-top: 32px;
         margin-bottom: 15px;
     }
 
