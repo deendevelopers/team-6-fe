@@ -118,12 +118,11 @@
 
 .ads {
     &__ad {
-        border-top-color: black;
-        border-bottom-color: black;
-        border-right-color: transparent;
-        border-left-color: transparent;
-        background-color: transparent;
+        border-right-color: transparent !important;
+        border-left-color: transparent !important;
+        background-color: white;
         padding: 10px;
+        border: 1px solid;
     }
 
     &__live-ads {
@@ -132,12 +131,17 @@
         }
 
         &--image {
-            height: 93px;
+            height: 70px;
             width: 108px;
             border: 1px solid black;
         }
 
+        &--title {
+            text-align: start;
+        }
+
         &--description {
+            text-align: start;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -145,8 +149,8 @@
         }
 
         &--count {
-            margin-top: 30px;
-            color: rgb(82, 177, 183);
+            text-align: start;
+            margin-top: 10px;
 
             fa-icon {
                 padding-right: 10px;
@@ -172,9 +176,10 @@
 
 .preview-the-ad {
     &__title {
-        margin-top: 15px;
-        margin-bottom: 20px;
+        margin-top: 5px;
+        margin-bottom: 7px;
         font-size: 20px;
+        background-color: white;
     }
 
     &__images {
@@ -184,6 +189,7 @@
         padding: 10px;
         border-radius: 5px;
         margin-top: 10px;
+        background-color: white;
     }
 
     &__description {
@@ -193,6 +199,7 @@
         border: 1px solid black;
         padding: 10px;
         border-radius: 5px;
+        background-color: white;
     }
 
     &__ad-title {
@@ -202,6 +209,7 @@
         border: 1px solid black;
         padding: 10px;
         border-radius: 5px;
+        background-color: white;
     }
 
     &__buttons {
@@ -240,8 +248,47 @@
     background-color: #ef626c;
     height: 87px;
     color: white;
-    margin-top: -32px;
+    margin-top: -42px;
     margin-left: -10px;
     margin-right: -10px;
     padding-top: 50px;
+}
+
+
+.banner {
+    &__background-1 {
+        background-color: rgb(245, 245, 245);
+        margin-top: -9px;
+        height: 61px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    &__background-2 {
+        background-color: rgb(245, 245, 245);
+        margin-top: -9px;
+        height: 61px;
+        position: fixed;
+        bottom: 10px;
+        width: 100%;
+    }
+    &__background-3 {
+        background-color: rgb(245, 245, 245);
+        margin-top: -9px;
+        height: 61px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+button {
+    margin-top: 10px;
+    background-color: transparent;
+    border-color: transparent;
+    border-style: none;
+}
+
+img {
+    margin-top: -15px;
 }

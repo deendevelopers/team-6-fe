@@ -1,8 +1,7 @@
-<app-banner></app-banner>
 
 <div class="row">
     <button #backButton class="back-button" (click)="goBack()">
-        <fa-icon [icon]="faChevronLeft"></fa-icon> Back
+        <fa-icon [icon]="faChevronLeft"></fa-icon>
     </button>
 </div>
 
@@ -26,6 +25,14 @@
     <div class="row center-xs">
         <button class="receive-options__button" (click)="selectOption('Pots and Pans')">Pots and Pans</button>
     </div>
+
+    <div class="row center-xs banner__background-1">
+        <button (click)="goHome()">
+            <div class="row center-xs ">
+                <img class="image-1"src="/assets/logo.png" height="50">
+            </div>
+        </button>
+    </div>
 </div>
 
 <div #donateInput class="donate-input">
@@ -46,7 +53,6 @@
         <button class="ads__ad" (click)="selectAd(ad.id)">
             <div class="row ads__live-ads">
                 <div class="col ads__live-ads--image">
-                    (image)
                 </div>
                 <div class="col ads__live-ads--container">
                     <div class="ads__live-ads--title">{{ad.title}}</div>
@@ -55,6 +61,14 @@
                         <fa-icon [icon]="faEye"></fa-icon>{{viewCount}} views
                     </div>
                 </div>
+            </div>
+        </button>
+    </div>
+
+    <div class="row center-xs banner__background-2">
+        <button (click)="goHome()">
+            <div class="row center-xs ">
+                <img class="image-2" src="/assets/logo.png" height="50">
             </div>
         </button>
     </div>
@@ -71,7 +85,6 @@
         </div>
 
         <div class="row preview-the-ad__images">
-            (pics)
         </div>
 
         <div class="row preview-the-ad__description">
@@ -92,5 +105,13 @@
 
     <div *ngIf="selectedAd.length == 0">
         Unfortunately, there are no ads of this type.
+    </div>
+
+    <div class="row center-xs banner__background-3">
+        <button (click)="goHome()">
+            <div class="row center-xs ">
+                <img class="image-3" src="/assets/logo.png" height="50">
+            </div>
+        </button>
     </div>
 </div>

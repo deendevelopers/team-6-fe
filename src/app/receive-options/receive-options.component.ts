@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { faChevronLeft, faEye, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { ConfigService } from '../config/config.service';
 import { SharedService } from '../services/shared.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-receive-options',
@@ -24,42 +25,43 @@ export class ReceiveOptionsComponent implements OnInit {
   peopleCount = 0;
   viewCount = 0;
   selectedAd = [];
-  ads = [
-    {
-      id: 1,
-      title: 'Ad 1 - Pots and pans',
-      quality: 'New',
-      description: 'Cool ad',
-      giverId: 1,
-      itemType: 'Pots and Pans'
-    },
-    {
-      id: 2,
-      title: 'Ad 2 - Bedding',
-      quality: 'Used',
-      description: 'Another cool ad',
-      giverId: 1,
-      itemType: 'Bedding'
-    },
-    {
-      id: 3,
-      title: 'Ad 3 - Cleaning',
-      quality: 'New',
-      description: 'Cool ad',
-      giverId: 1,
-      itemType: 'Cleaning Materials'
-    },
-    {
-      id: 4,
-      title: 'Ad 4 - White good',
-      quality: 'Used',
-      description: 'Another cool ad',
-      giverId: 1,
-      itemType: 'White good'
-    }
-  ];
+  ads;
+  // ads = [
+  //   {
+  //     id: 1,
+  //     title: 'Ad 1 - Pots and pans',
+  //     quality: 'New',
+  //     description: 'Cool ad',
+  //     giverId: 1,
+  //     itemType: 'Pots and Pans'
+  //   },
+  //   {
+  //     id: 2,
+  //     title: 'Ad 2 - Bedding',
+  //     quality: 'Used',
+  //     description: 'Another cool ad',
+  //     giverId: 1,
+  //     itemType: 'Bedding'
+  //   },
+  //   {
+  //     id: 3,
+  //     title: 'Ad 3 - Cleaning',
+  //     quality: 'New',
+  //     description: 'Cool ad',
+  //     giverId: 1,
+  //     itemType: 'Cleaning Materials'
+  //   },
+  //   {
+  //     id: 4,
+  //     title: 'Ad 4 - White good',
+  //     quality: 'Used',
+  //     description: 'Another cool ad',
+  //     giverId: 1,
+  //     itemType: 'White good'
+  //   }
+  // ];
 
-  constructor(private configService: ConfigService, private readonly sharedService: SharedService) { }
+  constructor(private configService: ConfigService, private readonly sharedService: SharedService, private router: Router, ) { }
 
   ngOnInit(): void {
   }
@@ -76,10 +78,10 @@ export class ReceiveOptionsComponent implements OnInit {
         this.ads = ads;
       }
     });
+    this.sharedService.getAd().subscribe(ad => this.ads = ad);
 
     this.ads = this.ads.filter(ad => ad.itemType === this.selectedOption)
-    console.log(this.selectedOption)
-    console.log(this.ads)
+
   }
 
   goBack() {
@@ -93,6 +95,10 @@ export class ReceiveOptionsComponent implements OnInit {
     this.selectedAd = this.ads.filter(ad => ad.id === id);
     this.viewAd.nativeElement.style.display = 'block';
     this.donateInput.nativeElement.style.display = 'none';
+  }
+
+  goHome() {
+    this.router.navigateByUrl('/sign-up')
   }
 
 }

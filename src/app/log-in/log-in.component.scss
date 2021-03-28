@@ -3,6 +3,7 @@
         margin-top: 50px;
         margin-bottom: 20px;
         font-size: 20px;
+        color: rgb(82, 177, 183);
     }
 
     &__input {
@@ -41,9 +42,12 @@
 }
 
 ::ng-deep .p-input-icon-right > .p-inputtext {
-    width: 224px;
+    width: 230px;
 }
 
+::ng-deep .p-inputtext {
+    width: 230px;
+}
 .does-not-exist {
     font-size: 12px;
     text-align: center;

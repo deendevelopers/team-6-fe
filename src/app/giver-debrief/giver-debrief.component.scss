@@ -22,6 +22,7 @@
     }
 
     &__checklist {
+        background-color: white;
         margin-top: 50px;
 
         &-item {
@@ -46,4 +47,8 @@
             text-decoration: none;
         }
     }
+}
+
+.banner__background {
+    bottom: 11px !important;
 }

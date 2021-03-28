@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { ConfigService } from '../config/config.service';
 import { SharedService } from '../services/shared.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-track-ads',
@@ -28,23 +29,23 @@ export class TrackAdsComponent implements OnInit {
   ads = [
     {
       id: 1,
-      title: 'Ad 1',
+      title: 'Pots',
       quality: 'New',
-      description: 'Cool ad',
+      description: '5 set pots and pans.',
       giverId: 1,
       itemType: 'Pots and Pans'
     },
     {
       id: 2,
-      title: 'Ad 2',
+      title: 'Duvet Set',
       quality: 'Used',
-      description: 'Another cool ad',
+      description: 'White double set.',
       giverId: 1,
       itemType: 'Bedding'
     }
   ];
 
-  constructor(private configService: ConfigService, private readonly sharedService: SharedService) {
+  constructor(private configService: ConfigService, private readonly sharedService: SharedService, private router: Router,) {
     this.peopleResponded = [
       { name: 'Ben', code: 'NY' },
       { name: 'James', code: 'RM' },
@@ -70,6 +71,9 @@ export class TrackAdsComponent implements OnInit {
       this.ads.filter(ad => ad.giverId.toString() === this.user)
     }
 
+    this.sharedService.getAd().subscribe(ad => this.ads.push(ad));
+    this.sharedService.setAd(this.ads);
+
   }
 
   trackAd(id: number) {
@@ -85,5 +89,9 @@ export class TrackAdsComponent implements OnInit {
 
   no() {
     this.itemDelivered = false;
+  }
+
+  goHome() {
+    this.router.navigateByUrl('/sign-up')
   }
 }

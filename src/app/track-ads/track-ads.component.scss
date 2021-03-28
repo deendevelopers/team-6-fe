@@ -1,6 +1,6 @@
 .track-ads{
     &__title {
-        margin-top: 50px;
+        margin-top: 40px;
         margin-bottom: 20px;
         font-size: 20px;
     }
@@ -27,7 +27,8 @@
     &__navigation {
         display: inline-flex;
         align-items: center;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
+        padding-top: 10px;
 
         button {
             border: none;
@@ -38,15 +39,17 @@
         }
 
         &-closed {
+            text-decoration: underline;
         }
     }
 
     &__ad {
-        border-top-color: black;
-        border-bottom-color: black;
+        border-top-color: #bfbaba;
+        border-bottom-color: white;
         border-right-color: transparent;
         border-left-color: transparent;
-        background-color: transparent;
+        background-color: white;
+        margin-bottom: 5px;
         padding: 10px;
     }
 
@@ -54,8 +57,8 @@
         padding-bottom: 20px;
 
         span {
-            padding-left: 10px;
-            padding-right: 10px;
+            padding-left: 5px;
+            padding-right: 5px;
             color: rgb(239, 98, 108);
         }
     }
@@ -67,12 +70,17 @@
         }
 
         &--image {
-            height: 93px;
+            height: 70px;
             width: 108px;
             border: 1px solid black;
         }
 
+        &--title {
+            text-align: start;
+        }
+
         &--description {
+            text-align: start;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -80,8 +88,8 @@
         }
 
         &--count {
+            text-align: start;
             margin-top: 10px;
-            color: rgb(82, 177, 183);
 
             fa-icon {
                 padding-right: 10px;
@@ -160,4 +168,32 @@
 
 .pink {
     height: 130px !important;
+}
+
+.white-background {
+    background-color: white;
+}
+
+
+
+.banner {
+    &__background {
+        background-color: rgb(245, 245, 245);
+        margin-top: -9px;
+        height: 61px;
+        position: fixed;
+        bottom: 10px;
+        width: 100%;
+    }
+}
+
+button {
+    margin-top: 10px;
+    background-color: transparent;
+    border-color: transparent;
+    border-style: none;
+}
+
+img {
+    margin-top: -5px;
 }

@@ -19,7 +19,7 @@
             <div class="row track-ads__live-ads">
 
                 <div class="col track-ads__live-ads--image">
-                    (image)
+
                 </div>
                 <div class="col track-ads__live-ads--container">
                     <div class="track-ads__live-ads--title">{{ad.title}}</div>
@@ -35,23 +35,27 @@
     <div class="row track-ads__closed-ads">
     </div>
 
-    <button class="track-ads__button-track"> <a routerLink="/donate-options" routerLinkActive="active">Donate more</a></button>
+    <button class="track-ads__button-track"> <a routerLink="/donate-options" routerLinkActive="active">Donate
+            more</a></button>
 </div>
 
 
 <div #individualAd class="individual-ad">
-    <div *ngFor="let ad of selectedAd">
-        <div class="row individual-ad__title">
-            {{ad.title}}
+    <div class="white-background">
+
+        <div *ngFor="let ad of selectedAd">
+            <div class="row individual-ad__title">
+                {{ad.title}}
+            </div>
         </div>
-    </div>
 
-    <div class="row individual-ad__progress">
-        <img src="/assets/progress.png" height="70">
-    </div>
+        <div class="row individual-ad__progress">
+            <img src="/assets/progress.png" height="70">
+        </div>
 
-    <div class="track-ads__live-ads--count">
-        <fa-icon [icon]="faEye"></fa-icon>{{viewCount}} views
+        <div class="track-ads__live-ads--count">
+            <fa-icon [icon]="faEye"></fa-icon>{{viewCount}} views
+        </div>
     </div>
 
     <div class="row individual-ad__question">
@@ -76,4 +80,13 @@
         <button class="individual-ad__submit-button"> <a routerLink="/donate-options"
                 routerLinkActive="active">Submit</a></button>
     </div>
+
+</div>
+
+<div class="row center-xs banner__background">
+    <button (click)="goHome()">
+        <div class="row center-xs ">
+            <img src="/assets/logo.png" height="50">
+        </div>
+    </button>
 </div>
